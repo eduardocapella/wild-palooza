@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+  <title>Damned Memory</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+
+  <div id="root">
+
+    <div id="intro">
+      <div id="part1">
+        <p>Hi there!<br>Welcome to Wild Palooza</p>
+        <p>I'm so happy to see a human being!! How did you appear here?</p>
+        <p>We must find the responsible for this chaos! What's your name?</p>
+        <div class="form-row">
+          <input type="text" id="setPlayerName" maxlength="30">
+          <div id="settingsLevel" class="btn-group">
+            <button value="Easy">Easy</button>
+            <button value="Normal" class="selected">Normal</button>
+            <button value="Hard">Hard</button>
+            <button value="Very-Hard">Very Hard</button>
+          </div>
+          <button id="savePlayerName" class="hidden">Ok!</button>
+        </div>
+      </div>
+
+      <!-- <p>Wild Palooza is a memory game with a twist. Instead of matching pairs of identical cards, you must match pairs of cards that are related in some way. For example, you might match a picture of a cat with a picture of a mouse, or a picture of a dog with a picture of a bone.</p> -->
+
+      <div id="part2" class="hidden">
+        <p>Nice to meet you, <span class="playerName"></span>!</p>
+        <p>Click on the cards to find the matching pairs.</p>
+        <p>The fewer attempts you make, the higher your score will be. Good luck!</p>
+        <button id="start">Start</button>
+      </div>
+    </div>
+
+    <div id="sidebar" class="hidden">
+      <h1 id="gameTitle">Wild Palooza</h1>
+      <h2><span id="playerName"></span>'s Inventory</h2>
+      <div id="scoreboard">
+        <h3>Level: <span id="displayLevel">0</span></h3>
+        <h3>Score: <span id="displayScore">0</span></h3>
+        <!-- <button id="reset">Reset</button> -->
+        <h3>Attempts: <span id="displayAttempts">0</span></span></h3>
+      </div>
+
+      
+
+      <div id="rightOrWrongStats">
+
+      </div>
+
+      <button id="restartButton" class="hidden">Play again!</button>
+
+      <div id="timer">00:00</div>
+    </div>
+
+    <div id="board">
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
