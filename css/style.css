@@ -213,6 +213,7 @@ button.selected {
 }
 
 
+
 #part1, #part2 {
   max-width: 75%;
   padding: 1.4rem 2rem;
@@ -245,8 +246,6 @@ button.selected {
   width: 1rem;
 }
 
-
-
 #timer {
   position: absolute;
   bottom: 2rem;
@@ -256,3 +255,51 @@ button.selected {
 }
 
 
+
+
+@media screen and (max-width:600px) {
+
+  #sidebar {
+    margin-bottom: 2rem;
+  }
+
+  #root {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  #timer {
+    position: static;
+    text-align: left;
+    margin-top: 1rem;
+  }
+
+  #sorted-cards.level-easy {
+    grid-template-columns: auto auto auto;
+  }
+
+  #sorted-cards.level-very-hard {
+    grid-template-columns: auto auto auto auto;
+  }
+
+  #intro p {
+    font-size: 1.2rem;
+  }
+
+  .btn-group {
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  .btn-group > button {
+    width: calc(50% - .25rem) !important;
+  }
+  .form-row button {
+    font-size: .8rem;
+  }
+
+  #part1, #part2 {
+    max-width: none !important;
+    width: 90%;
+  }
+}
