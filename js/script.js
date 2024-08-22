@@ -17,6 +17,7 @@ let displayScore = document.getElementById('displayScore');
 let displayAttempts = document.getElementById('displayAttempts');
 let rightOrWrongStats = document.getElementById('rightOrWrongStats');
 let sidebar = document.getElementById('sidebar');
+let finalMessage = document.getElementById('finalMessage');
 
 let part1 = document.getElementById('part1');
 let part2 = document.getElementById('part2');
@@ -80,7 +81,7 @@ function gameSetup() {
     cards: '',
     backOfCard: imgPath + '/back-of-card.webp',
   };
-  
+
   player = {
     name: '',
     attempts: [],
@@ -124,13 +125,13 @@ savePlayerName.addEventListener('click', function() {
 
 document.getElementById('start').addEventListener('click', function() {
   introScreen.classList.add('hidden');
-  
+
   clearTimer();
   formatTime(elapsedTime);
   updateTimer();
-  
+
   sidebar.classList.remove('hidden');
-  
+
   // Começa a contar o tempo
   timerInterval = setInterval(updateTimer, 1000);
 });
@@ -214,7 +215,7 @@ function setLevel(level) {
       settings.cards = 12;
       break;
   }
-  
+
   displayLevel.textContent = settings.level;
   setPack(settings.cards);
 }
@@ -255,7 +256,7 @@ function sortCards() {
   console.log('cards', cards);
   console.log('gameCardsPaths', gameCardsPaths);
   // return cards;
-  
+
   let ulSortedCards = document.createElement('ul');
   ulSortedCards.classList.add('level-' + settings.level.toLowerCase());
   ulSortedCards.id = 'sorted-cards';
@@ -267,7 +268,7 @@ function sortCards() {
     let ulSortedCardsLi = document.createElement('li');
     ulSortedCardsLi.classList.add('card');
     ulSortedCardsLi.id = `card-${index + 1}`;
-    
+
     // sets <img>
     let ulSortedCardsLiImg = document.createElement('img');
     // ulSortedCardsLiImg.src = card.url;
@@ -321,7 +322,7 @@ function verifyMatch( imgPath ) {
       // console.log('matchedCard', matchedCard);
       let img = document.createElement('img');
       img.src = imgPath;
-      
+
       rightOrWrong(1);
 
     } else {
@@ -341,8 +342,8 @@ function verifyMatch( imgPath ) {
         });
       }, 1000);
     }
-    
-    
+
+
     let lastTwo = player.attempts.splice(player.attempts.length - 2, 2);
     player.attempts.push(lastTwo);
     // console.log('player.attempts', player.attempts);
@@ -354,7 +355,7 @@ function verifyMatch( imgPath ) {
 
     console.log('player', player);
   }
-  
+
   checkEndGame();
 }
 
@@ -362,13 +363,13 @@ function verifyMatch( imgPath ) {
 function rightOrWrong(value) {
   let li = document.createElement('li');
   let img = document.createElement('img');
-  
+
   if (value === 1) {
     img.src = 'img/right.png';
   } else {
     img.src = 'img/wrong.png';
   }
-  
+
   li.append(img);
   rightOrWrongStats.append(li);
 }
@@ -378,6 +379,7 @@ function checkEndGame() {
   if (player.score === settings.cards) {
     stopTimer();
     restartButton.classList.remove('hidden');
+    finalMessage.classList.remove('hidden');
   }
 }
 
