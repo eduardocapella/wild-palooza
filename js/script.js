@@ -155,6 +155,7 @@ btnGroup.querySelectorAll('button').forEach(btn => {
 restartButton.addEventListener('click', function() {
   this.classList.add('hidden');
   introScreen.classList.remove('hidden');
+  finalMessage.classList.add('hidden');
   rightOrWrongStats.innerHTML = '';
 
   gameSetup();
