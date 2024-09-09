@@ -1,0 +1,13 @@
+{
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"bracketSpacing": true
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true
+		}
+	}
+}
